@@ -24,7 +24,7 @@ It is for these reasons that the classical notion of K-complexity \textit{strict
 
 ## Method
 
-Let's recap what we have achieved so far. We have found that a version of neural networks of complexity K can be written as follows $C_{U}(cl) = min_{n} { |n| : U(n) = cl }$.  
+Let's recap what we have achieved so far. We have found that a version of neural networks of complexity K can be written as follows C_{U}(cl) = min_{n} { |n| : U(n) = cl }$.  
 
 However, this definition has two problems, so let try to adapt it :  
 First, the neural network provides probabilities instead of definitive answers, which means that there are multiple answers for a given input. Most of the time, the answer will be the most probable. This means that our equation must be transformed as follows :   $C_{U}(cl) = min_{n} { |n| : max(U(n)) = cl }$ as $U(n)$ becomes a list.  
@@ -62,18 +62,27 @@ After completing the training and evaluation, the complexity will be calculated 
 
 ## Results
 
-Here are the raw results obtained after the experiment :   
+The Figure 1 shows the raw results obtained after the experiment :   
 
-![Table](https://user-images.githubusercontent.com/90097422/210274419-b0a9a96d-8eaa-42c6-9520-19eefec6c6c0.png)
+<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/90097422/210274419-b0a9a96d-8eaa-42c6-9520-19eefec6c6c0.png" width="600"><br>
+  <b>Figure 1 : Table of row ordered results</b>
+</p>
+<br>
 
 They were ranked in descending order, because the higher the accuracy or the inverse of the loss, the closer the model is to the expected results. And the higher the complexity, the closer we think we are to the Kolomogorov complexity.  
 
 We observe that all measurements give us the same order for the networks. This is a good indication of the agreement of the chosen estimators, as it shows that they discern the data along similar lines, which is what we wanted. Furthermore, each of our models far outperforms the baseline model. This proves that the baseline is perhaps the most efficient network, using all available metrics, because it has very few connections, very few parameters, tiny memory size, and pretty decent results. Thus, this model won the experiment by far for all complexity metrics.  
 
-In order to further analyze our metrics, a more interpretive version of our results is needed to gain more insight into the relevance of the measures. Therefore, we will standardize our results and plot them in the same graph. You can view the results below : 
+In order to further analyze our metrics, a more interpretive version of our results is needed to gain more insight into the relevance of the measures. Therefore, we will standardize our results and plot them in the same graph, as you can see in Figure 2 : 
 
-![plot](https://user-images.githubusercontent.com/90097422/210274445-f306f520-f7ad-4b1e-827a-593a096d9693.png)
-
+<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/90097422/210274445-f306f520-f7ad-4b1e-827a-593a096d9693.png" width="600"><br>
+  <b>Figure 2 : Graphs of the complexity metrics</b>
+</p>
+<br>
 
 This graph allows for a better comparison of the metrics used. In this case, the best of all the metrics is the accuracy by neurons, because it highlights the differences by increasing distances better than the other metrics.
 
@@ -83,10 +92,15 @@ As we have seen in these experiments, there is still a lot of work to be done to
 
 For the part where we looked for estimators of our quantities, the most relevant estimator of the program size was discarded. It is really annoying not to use the computational length when fitting the Kolmogorov complexity. Yet, approximations of this quantity have been found. On the other hand, the accuracy seems to be the best available estimator for the proximity of the expected results. This proves that we have achieved some improvement in the estimation of the K-complexity version of the neural network.  
 
-Regarding the results obtained, the model selected by our method has the least accuracy. As shown in the graph below :  
+Regarding the results obtained, Figure 3 shows that the model selected by our method has the least accuracy :  
 
-![accuracy plot](https://user-images.githubusercontent.com/90097422/210274526-4365def6-4bc8-4798-b44d-a8367761534d.png)
+<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/90097422/210274526-4365def6-4bc8-4798-b44d-a8367761534d.png" width="600"><br>
+  <b>Figure 3 : Graphs of the accuracy by models</b>
+</p>
+<br>
 
-This is a big enough problem to invalidate all of our theory. K-complexity first defines the programs that lead to the expected results, and then takes the shortest one. It now seems clear that our approximation does not work as expected and cannot be considered a K-complexity approximation for neural networks. Even if this article does not provide any meaningful estimation, it can be seen as a first draft in the path of getting closer to the desired K-complexity approximation for neural networks.  
+This is a big enough problem to invalidate our theory. K-complexity first defines the programs that lead to the expected results, and then takes the shortest one, in that order. The approximation that we have computed instead favors the shortest program, disregarding the accuracy. It now seems clear that our approximation does not work as expected and cannot be considered a K-complexity approximation for neural networks. One possibility to fix this approximation should be by adding coefficents to penalize program length so that the accuracy can be less impactful. But, even if this article does not provide any meaningful estimation, it can be seen as a first draft in the path of getting closer to the desired K-complexity approximation for neural networks.  
 
 Also, significant work remains to be done to analyze the built-in functions and mapping subprocedures to allow the computation of program length in terms of bytes. Overall, although the ideal K-complexity cannot be calculated, this micro-study has shown that approximations can be found, even if the chosen one was not suitable. Ideally, a good approximation should rank programs according to the distance between themselves and the K-complexity. And thus this approximation will have an extremum, certainly infinite, corresponding to the ideal K-complexity, in which it would be possible to get closer.  
