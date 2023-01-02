@@ -1,10 +1,10 @@
 <br>
 <p align="right">
-  <img src="https://user-images.githubusercontent.com/90097422/210276444-d80de34e-69b1-41bb-b33c-d4419f1b6140.png" width="200"><br>
+  <img src="https://user-images.githubusercontent.com/90097422/210276444-d80de34e-69b1-41bb-b33c-d4419f1b6140.png" width="50"><br>
 </p>
 <br>
 
-# Adapting-the-K-complexity-for-neural-networks
+# Adapting the Kolmogorov complexity for neural networks
 
 In this repository, you will find the python module <code>neural_network_k_complexity.py</code> that is able to compute an approximation of the Kolmogorov complexity for neural network.
 
