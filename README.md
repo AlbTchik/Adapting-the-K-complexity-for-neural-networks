@@ -6,14 +6,14 @@
 
 In this repository, you will find the python module <code>neural_network_k_complexity.py</code> that is able to compute an approximation of the Kolmogorov complexity for neural network.
 
-You can import it using the following line : <code>import neural_network_k_complexity</code>.  
-Just remember to add the module to your main folder on Google Drive if you are using the Google Colab notebook of this repository.
-Once that is done, call the <code>complexity_evaluation()</code> function, the arguments you need to provide are the following :
+You can import it using the following line : <code>import neural_network_k_complexity as k_complexity</code>.  
+Just remember to add the module to your main folder on Google Drive if you are using the Google Colab notebook : <code>Adapting the K-complexity for neural network.ipynb</code>.
+Once that is done, call the <code>k_complexity.complexity_evaluation(**args)</code> function, the arguments you need to provide are the following :
 
 <ul>
   <li><code>model</code> : is the TensorFlow model for which a K-complexity approximation is needed</li>
-  <li><code>X_test</code> : are the test data of your model</li>
-  <li><code>Y_test</code> : are the test labels of your model</li>
+  <li><code>X_test</code> : are the test data of your dataset</li>
+  <li><code>Y_test</code> : are the test labels of your dataset</li>
   <li><code>closeness_to_expected_results_computation</code> : is the method you prefer to approximate the closeness to the expected results computation. The following values are possible : </li>
     <ul>
       <li><code>loss</code></li>
@@ -27,9 +27,7 @@ Once that is done, call the <code>complexity_evaluation()</code> function, the a
     </ul>
 </ul>
 
-Additionnaly, a micro-study of the possibilities given by this complexity module is also provided
-
-If you want more informations, you can have a look at my article on the subject. Even if some works still remains to be done to better fit an approximation for the K-complexity. the code of this experiment is in the notebook : <code>Adapting the K-complexity for neural network.ipynb</code>
+If you want more informations on how the module is behaving, you can have a look at my article on the subject. Even if some works still remains to be done to better fit an approximation for the K-complexity, this can give a indication of your code complexity. You can find the code developped in this experiment in the notebook : <code>Adapting the K-complexity for neural network.ipynb</code>
 ________________________________________________________________________________________________________
 ## Abstract
 
