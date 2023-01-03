@@ -1,4 +1,4 @@
-<p align="right">
+<p align="center">
   <img src="https://user-images.githubusercontent.com/90097422/210276444-d80de34e-69b1-41bb-b33c-d4419f1b6140.png" width="70"><br>
 </p>
 
@@ -6,7 +6,26 @@
 
 In this repository, you will find the python module <code>neural_network_k_complexity.py</code> that is able to compute an approximation of the Kolmogorov complexity for neural network.
 
-To use it ...
+You can import it using the following line : <code>import neural_network_k_complexity</code>.  
+Just remember to add the module to your main folder on Google Drive if you are using the Google Colab notebook of this repository.
+Once that is done, call the <code>complexity_evaluation()</code> function, the arguments you need to provide are the following :
+
+<ul>
+  <li><code>model</code> : is the TensorFlow model for which a K-complexity approximation is needed</li>
+  <li><code>X_test</code> : are the test data of your model</li>
+  <li><code>Y_test</code> : are the test labels of your model</li>
+  <li><code>closeness_to_expected_results_computation</code> : is the method you prefer to approximate the closeness to the expected results computation. The following values are possible : </li>
+    <ul>
+      <li><code>loss</code></li>
+      <li><code>accuracy</code></li>
+    </ul>
+  <li><code>neural_network_size_computation</code> : is the method you prefer to approximate the neural network size computation. The following values are possible : </li>
+    <ul>
+      <li><code>parameters</code></li>
+      <li><code>neurons</code></li>
+      <li><code>memory</code></li>
+    </ul>
+</ul>
 
 Additionnaly, a micro-study of the possibilities given by this complexity module is also provided
 
